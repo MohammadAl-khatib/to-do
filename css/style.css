@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+body{
+    background-image: url('/img/background-img-M104.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+}
+h3{
+    color:white;
+    background-color: black;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+form{
+position: absolute;
+top:200px;
+left: 300px;
+background-color: rgba(74, 128, 181,80%);
+color: white;
+text-align: center;
+padding: 50px;
+
+}
+form label,input,select{
+    display: block;
+    margin: auto;
+}
+form input, select{
+    margin-bottom: 20px;
+}
+input, select{
+    width: 150px;
+}
+.button{
+    background-color: black;
+    color: white;
+    height: 35px;
+}
+#tableSection{
+    position: absolute;
+    top:200px;
+    left: 700px;
+    background-color: rgba(74, 128, 181,80%);
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+table,th,tr,td{
+    border:white solid 2px;
+}
+th{
+    padding: 5px 50px;
+    background-color: black;
+    color: white;
+}
+td{
+    background-color: rgba(94, 91, 91,70%);
+    color: white;
+}
+section input{
+    margin-left: 0;
+    margin-top: 25px;
+}
