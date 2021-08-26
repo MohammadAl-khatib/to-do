@@ -58,9 +58,17 @@ th{
     background-color: black;
     color: white;
 }
+tr:nth-child(even){
+    background-color: rgb(124, 91, 91);
+}
 td{
     background-color: rgba(94, 91, 91,70%);
     color: white;
+    height: 25px;
+    vertical-align: middle;
+}
+span{
+    cursor: pointer;
 }
 section input{
     margin-left: 0;

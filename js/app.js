@@ -7,7 +7,7 @@ let clearButton = document.getElementById('clearButton');
 let data
 
 
-function CreateTask(taskName, date, urgency, status = 'X') {
+function CreateTask(taskName, date, urgency, status = 'x') {
 
     this.taskName = taskName;
     this.date = date;
@@ -32,7 +32,6 @@ function submitHandler(event) {
 
 function render() {
 
-
     for (let i = 0; i < objArray.length; i++) {
 
         let trElement = document.createElement('tr');
@@ -49,14 +48,16 @@ function render() {
         let td3Element = document.createElement('td');
         trElement.appendChild(td3Element);
         td3Element.textContent = objArray[i].urgency;
-        if(td3Element.textContent === 'low'){td3Element.setAttribute('style','color:rgb(74, 181, 74)')};
-        if(td3Element.textContent === 'medium'){td3Element.setAttribute('style','color:yellow')};
-        if(td3Element.textContent === 'high'){td3Element.setAttribute('style','color:red')};
+        if (td3Element.textContent === 'low') { td3Element.setAttribute('style', 'color:rgb(74, 181, 74)') };
+        if (td3Element.textContent === 'medium') { td3Element.setAttribute('style', 'color:yellow') };
+        if (td3Element.textContent === 'high') { td3Element.setAttribute('style', 'color:red') };
 
         let td4Element = document.createElement('td');
         trElement.appendChild(td4Element);
-        td4Element.textContent = objArray[i].status;
-        td4Element.id = i;
+        let spanElement = document.createElement('span');
+        td4Element.appendChild(spanElement);
+        spanElement.textContent = objArray[i].status;
+        spanElement.id = i;
     }
 }
 getData();
@@ -91,10 +92,10 @@ function clearHandler() {
 
 table.addEventListener('click', deleteTask);
 function deleteTask(event) {
-if(event.target.id){
-    objArray.splice(event.target.id,1);
-    localStorage.data = JSON.stringify(objArray);
-    clearTable();
-    render();
-}
+    if (event.target.id) {
+        objArray.splice(event.target.id, 1);
+        localStorage.data = JSON.stringify(objArray);
+        clearTable();
+        render();
+    }
 }
